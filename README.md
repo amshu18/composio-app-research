@@ -2,7 +2,7 @@
 
 Research pipeline and case study for the Composio **AI Product Ops Intern** take-home.
 
-**Live case study →** https://vishal-bhandary.github.io/composio-app-research/
+**Live case study →** https://amshu18.github.io/composio-app-research/
 
 For each of 100 apps: what auth it uses, whether a developer can get credentials
 themselves or has to ask a human, how broad the API surface is, and whether an

@@ -7,13 +7,13 @@ research pipeline** (Python, optional keys).
 
 ## 1. Just view the case study
 
-**Hosted:** https://vishal-bhandary.github.io/composio-app-research/
+**Hosted:** https://amshu18.github.io/composio-app-research/
 
 **Locally**, after cloning — `index.html` is fully self-contained, so opening the
 file works:
 
 ```bash
-git clone https://github.com/Vishal-bhandary/composio-app-research.git
+git clone https://github.com/amshu18/composio-app-research.git
 ```
 
 ```bash
@@ -190,12 +190,12 @@ python3 scripts/set_owner.py YOUR-GITHUB-USERNAME
 
 GitHub Pages serves `index.html` from the repository root.
 
-1. **github.com/Vishal-bhandary/composio-app-research/settings/pages**
+1. **github.com/amshu18/composio-app-research/settings/pages**
 2. **Source** → *Deploy from a branch*
 3. **Branch** → `main`, folder → `/ (root)` → **Save**
 
 First build takes 1–2 minutes, then the page is live at
-`https://vishal-bhandary.github.io/composio-app-research/`.
+`https://amshu18.github.io/composio-app-research/`.
 
 To update it after changing the data:
 
