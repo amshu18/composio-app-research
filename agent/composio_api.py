@@ -38,6 +38,10 @@ import httpx
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
 
+from agent.env import load_env
+
+load_env()
+
 BASE = "https://backend.composio.dev/api/v3.1"
 
 MODE_LABEL = {

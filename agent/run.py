@@ -15,6 +15,11 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(ROOT))
+
+from agent.env import load_env  # noqa: E402
+
+loaded = load_env()
 
 STAGES = [
     ("2  catalog probe", [sys.executable, "agent/composio_catalog.py"]),
@@ -39,6 +44,9 @@ def main() -> None:
         stages.insert(1, ("2b authenticated catalog", [sys.executable, "agent/composio_api.py"]))
     if args.research:
         stages.insert(1, ("3  doc research", [sys.executable, "agent/research.py"]))
+
+    if loaded:
+        print("loaded from .env:", ", ".join(loaded))
 
     for name, cmd in stages:
         print(f"\n\033[1m── stage {name} ─────────────────────────\033[0m")

@@ -88,9 +88,7 @@ Source URLs come from the grounding metadata, not from the model's prose.
 Check what your key can see first — Google's model IDs change often, and the
 code picks the best available rather than hardcoding one:
 
-```bash
-export GEMINI_API_KEY=...
-```
+Put the key in `.env` (see below) or export it, then:
 
 ```bash
 python3 agent/research.py --list-models
@@ -120,10 +118,6 @@ One call per app: server-side web search and structured output compose, so the
 model researches and emits schema-valid JSON in a single turn.
 
 ```bash
-export ANTHROPIC_API_KEY=sk-ant-...
-```
-
-```bash
 python3 agent/research.py --only 5 17 94
 ```
 
@@ -141,10 +135,6 @@ With both keys set, Anthropic wins. Force the other with
 
 Run the self-test first. It fetches one toolkit and tells you whether the
 response shape still matches what the code expects:
-
-```bash
-export COMPOSIO_API_KEY=...
-```
 
 ```bash
 python3 agent/composio_api.py --selftest
@@ -170,12 +160,18 @@ gated *is* the finding.
 
 ### Using a `.env` file instead of exports
 
+The pipeline reads `.env` from the repo root automatically — no `export`, no
+`source`, nothing shell-specific. Copy the template, fill in the keys you have,
+save:
+
 ```bash
 cp .env.example .env
 ```
 
-Fill it in, then `set -a && source .env && set +a`. `.env` is gitignored —
-never commit it.
+Leave unused keys blank; blank values are ignored. A real exported environment
+variable still wins over the file. `.env` is gitignored — never commit it.
+
+On Windows use `copy .env.example .env`.
 
 ---
 

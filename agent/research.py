@@ -35,6 +35,9 @@ ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
 
 from agent import providers  # noqa: E402
+from agent.env import load_env  # noqa: E402
+
+load_env()
 
 OUT = ROOT / "data" / "research_raw.jsonl"
 
